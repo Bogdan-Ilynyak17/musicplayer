@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Music Player</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div id="player">
+    <img id="album-cover" src="img/thumb.jpg" alt="Обкладинка альбому">
+    <h2 id="song-title">Мир серед війни</h2>
+    <audio id="audio" src="music/purimmyr.mp3"></audio>
+    
+    <div id="controls">
+        <button onclick="prevSong()">◁ Назад</button>
+        <button onclick="togglePlayPause()"> || Пауза</button>
+        <button onclick="nextSong()">▷ Вперед</button>
+    </div>
+    
+    <div id="progress-container">
+        <span id="current-time">00:00</span>
+        <input type="range" id="progress" value="0" max="100" onchange="seekAudio(this.value)">
+        <span id="duration">00:00</span>
+    </div>
+
+    <input type="range" id="volume" min="0" max="1" step="0.1" value="1" onchange="changeVolume(this.value)">
+    
+    <ul id="playlist">
+        <li onclick="setSong('music/purimmyr.mp3', 'Мир серед війни')">Мир серед війни</li>
+        <!-- <li onclick="setSong('song2.mp3', 'Пісня 2')">Пісня 2</li>
+        <li onclick="setSong('song3.mp3', 'Пісня 3')">Пісня 3</li> -->
+    </ul>
+
+
+   <!--   --></div>
+<script src="script.js"></script>
+</body>
+</html>
